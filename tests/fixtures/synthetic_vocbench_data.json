@@ -1,0 +1,245 @@
+{
+  "scraped_at": "2024-01-20T10:00:00Z",
+  "group_url": "https://groups.google.com/g/vocbench-user",
+  "stats": {
+    "total_threads": 5,
+    "total_messages": 15,
+    "successful_threads": 5,
+    "failed_threads": 0,
+    "start_time": "2024-01-20T09:55:00Z",
+    "end_time": "2024-01-20T10:00:00Z",
+    "errors": []
+  },
+  "threads": [
+    {
+      "thread_id": "thread_001",
+      "subject": "How to configure SPARQL endpoint in VocBench?",
+      "first_message_date": "2024-01-10T10:30:00Z",
+      "last_message_date": "2024-01-10T14:20:00Z",
+      "message_count": 3,
+      "url": "https://groups.google.com/g/vocbench-user/c/thread_001",
+      "messages": [
+        {
+          "message_id": "msg_001_1",
+          "thread_id": "thread_001",
+          "author": "John Smith",
+          "author_email": "john.smith@example.com",
+          "date": "2024-01-10T10:30:00Z",
+          "subject": "How to configure SPARQL endpoint in VocBench?",
+          "body": "Hi everyone, I'm new to VocBench and trying to configure a custom SPARQL endpoint. I have an existing GraphDB instance and want to connect VocBench to it. Can someone guide me through the process?",
+          "is_first_message": true,
+          "reply_to": null,
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_001"
+        },
+        {
+          "message_id": "msg_001_2",
+          "thread_id": "thread_001",
+          "author": "Jane Doe",
+          "author_email": "jane.doe@example.com",
+          "date": "2024-01-10T12:15:00Z",
+          "subject": "Re: How to configure SPARQL endpoint in VocBench?",
+          "body": "Hello John! To configure a SPARQL endpoint in VocBench:\n1. Go to Administration > Project Settings\n2. Navigate to the 'Data Access' section\n3. Select 'Remote Repository' option\n4. Enter your GraphDB SPARQL endpoint URL (usually http://localhost:7200/repositories/your-repo)\n5. Test the connection and save\n\nMake sure your GraphDB instance is running and accessible.",
+          "is_first_message": false,
+          "reply_to": "msg_001_1",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_001"
+        },
+        {
+          "message_id": "msg_001_3",
+          "thread_id": "thread_001",
+          "author": "John Smith",
+          "author_email": "john.smith@example.com",
+          "date": "2024-01-10T14:20:00Z",
+          "subject": "Re: How to configure SPARQL endpoint in VocBench?",
+          "body": "Thank you Jane! That worked perfectly. I was looking in the wrong settings menu.",
+          "is_first_message": false,
+          "reply_to": "msg_001_2",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_001"
+        }
+      ]
+    },
+    {
+      "thread_id": "thread_002",
+      "subject": "Error importing SKOS vocabulary",
+      "first_message_date": "2024-01-12T09:00:00Z",
+      "last_message_date": "2024-01-12T16:45:00Z",
+      "message_count": 4,
+      "url": "https://groups.google.com/g/vocbench-user/c/thread_002",
+      "messages": [
+        {
+          "message_id": "msg_002_1",
+          "thread_id": "thread_002",
+          "author": "Alice Johnson",
+          "author_email": "alice.j@example.com",
+          "date": "2024-01-12T09:00:00Z",
+          "subject": "Error importing SKOS vocabulary",
+          "body": "I'm trying to import an existing SKOS vocabulary (RDF/XML format) into VocBench, but I keep getting a parsing error. The file validates fine in Protégé. Any ideas?\n\nError message: 'Invalid RDF/XML syntax at line 145'",
+          "is_first_message": true,
+          "reply_to": null,
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_002"
+        },
+        {
+          "message_id": "msg_002_2",
+          "thread_id": "thread_002",
+          "author": "Bob Wilson",
+          "author_email": "bob.wilson@example.com",
+          "date": "2024-01-12T10:30:00Z",
+          "subject": "Re: Error importing SKOS vocabulary",
+          "body": "Hi Alice, could you check if your RDF/XML file has any special characters or namespace issues? VocBench can be strict about namespace declarations. Try validating with the W3C RDF Validator first.",
+          "is_first_message": false,
+          "reply_to": "msg_002_1",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_002"
+        },
+        {
+          "message_id": "msg_002_3",
+          "thread_id": "thread_002",
+          "author": "VocBench Support",
+          "author_email": "support@vocbench.org",
+          "date": "2024-01-12T14:00:00Z",
+          "subject": "Re: Error importing SKOS vocabulary",
+          "body": "Alice, in addition to Bob's suggestion, you might want to:\n1. Try converting to Turtle format first\n2. Check if there are any blank nodes that might be causing issues\n3. Look at line 145 specifically - sometimes it's a malformed literal or language tag\n4. Make sure all required SKOS namespaces are declared\n\nIf the problem persists, feel free to share a sample of the problematic section.",
+          "is_first_message": false,
+          "reply_to": "msg_002_1",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_002"
+        },
+        {
+          "message_id": "msg_002_4",
+          "thread_id": "thread_002",
+          "author": "Alice Johnson",
+          "author_email": "alice.j@example.com",
+          "date": "2024-01-12T16:45:00Z",
+          "subject": "Re: Error importing SKOS vocabulary",
+          "body": "Thanks everyone! The issue was a language tag with an underscore instead of a hyphen (en_US vs en-US). Fixed it and the import works now!",
+          "is_first_message": false,
+          "reply_to": "msg_002_3",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_002"
+        }
+      ]
+    },
+    {
+      "thread_id": "thread_003",
+      "subject": "Best practices for collaborative editing",
+      "first_message_date": "2024-01-14T11:00:00Z",
+      "last_message_date": "2024-01-15T09:30:00Z",
+      "message_count": 3,
+      "url": "https://groups.google.com/g/vocbench-user/c/thread_003",
+      "messages": [
+        {
+          "message_id": "msg_003_1",
+          "thread_id": "thread_003",
+          "author": "Carlos Martinez",
+          "author_email": "carlos.m@example.com",
+          "date": "2024-01-14T11:00:00Z",
+          "subject": "Best practices for collaborative editing",
+          "body": "We have a team of 5 people working on the same vocabulary in VocBench. What are the best practices for collaborative editing? Should we use different user roles? How do we handle conflicts?",
+          "is_first_message": true,
+          "reply_to": null,
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_003"
+        },
+        {
+          "message_id": "msg_003_2",
+          "thread_id": "thread_003",
+          "author": "VocBench Support",
+          "author_email": "support@vocbench.org",
+          "date": "2024-01-14T15:20:00Z",
+          "subject": "Re: Best practices for collaborative editing",
+          "body": "Great question Carlos! Here are some best practices:\n\n1. **Use Validation Workflow**: Enable the validation workflow where editors propose changes and validators approve them\n2. **Assign Roles**: Use VocBench's role system - Editors, Validators, and Project Managers\n3. **Use Groups**: Organize your team into groups if working on different concept schemes\n4. **Change Tracking**: VocBench tracks all changes with timestamps and user info\n5. **Regular Communication**: Establish conventions for concept labels and definitions\n6. **Branching**: For major changes, consider using VocBench's branching feature\n\nConflicts are minimized by VocBench's transaction system, but communication is key!",
+          "is_first_message": false,
+          "reply_to": "msg_003_1",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_003"
+        },
+        {
+          "message_id": "msg_003_3",
+          "thread_id": "thread_003",
+          "author": "Diana Lee",
+          "author_email": "diana.lee@example.com",
+          "date": "2024-01-15T09:30:00Z",
+          "subject": "Re: Best practices for collaborative editing",
+          "body": "We've been using VocBench with a team of 8 for the past year. The validation workflow is essential! Also recommend setting up regular sync meetings to discuss complex modeling decisions. The history view is great for understanding who changed what and why.",
+          "is_first_message": false,
+          "reply_to": "msg_003_2",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_003"
+        }
+      ]
+    },
+    {
+      "thread_id": "thread_004",
+      "subject": "Custom SPARQL queries for concept hierarchies",
+      "first_message_date": "2024-01-16T13:00:00Z",
+      "last_message_date": "2024-01-16T17:00:00Z",
+      "message_count": 2,
+      "url": "https://groups.google.com/g/vocbench-user/c/thread_004",
+      "messages": [
+        {
+          "message_id": "msg_004_1",
+          "thread_id": "thread_004",
+          "author": "Eva Schmidt",
+          "author_email": "eva.s@example.com",
+          "date": "2024-01-16T13:00:00Z",
+          "subject": "Custom SPARQL queries for concept hierarchies",
+          "body": "Is there a way to write custom SPARQL queries to analyze concept hierarchies? I want to find all concepts that are more than 3 levels deep in the hierarchy and don't have any narrower concepts.\n\nCan VocBench's SPARQL interface handle property paths?",
+          "is_first_message": true,
+          "reply_to": null,
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_004"
+        },
+        {
+          "message_id": "msg_004_2",
+          "thread_id": "thread_004",
+          "author": "Frank Chen",
+          "author_email": "frank.chen@example.com",
+          "date": "2024-01-16T17:00:00Z",
+          "subject": "Re: Custom SPARQL queries for concept hierarchies",
+          "body": "Yes! VocBench's SPARQL tab supports full SPARQL 1.1 including property paths. Here's a query that should work:\n\n```sparql\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT ?concept WHERE {\n  ?concept a skos:Concept .\n  ?concept skos:broader{3,} ?topConcept .\n  FILTER NOT EXISTS { ?narrower skos:broader ?concept }\n}\n```\n\nYou can run this in the SPARQL tab under the 'Advanced' menu. The {3,} means 3 or more skos:broader relations in the path.",
+          "is_first_message": false,
+          "reply_to": "msg_004_1",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_004"
+        }
+      ]
+    },
+    {
+      "thread_id": "thread_005",
+      "subject": "Exporting to different RDF formats",
+      "first_message_date": "2024-01-18T08:30:00Z",
+      "last_message_date": "2024-01-18T10:15:00Z",
+      "message_count": 3,
+      "url": "https://groups.google.com/g/vocbench-user/c/thread_005",
+      "messages": [
+        {
+          "message_id": "msg_005_1",
+          "thread_id": "thread_005",
+          "author": "Grace Taylor",
+          "author_email": "grace.t@example.com",
+          "date": "2024-01-18T08:30:00Z",
+          "subject": "Exporting to different RDF formats",
+          "body": "What's the recommended way to export a vocabulary from VocBench in different RDF formats? I need Turtle, JSON-LD, and RDF/XML versions of the same vocabulary for different use cases.",
+          "is_first_message": true,
+          "reply_to": null,
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_005"
+        },
+        {
+          "message_id": "msg_005_2",
+          "thread_id": "thread_005",
+          "author": "Henry Brown",
+          "author_email": "henry.b@example.com",
+          "date": "2024-01-18T09:45:00Z",
+          "subject": "Re: Exporting to different RDF formats",
+          "body": "Grace, you can export in multiple formats:\n\n1. Go to Data > Export\n2. Select your export scope (whole project, specific scheme, etc.)\n3. Choose the format from the dropdown (Turtle, RDF/XML, JSON-LD, N-Triples, etc.)\n4. Click export and download\n\nYou can repeat this process for each format you need. VocBench uses the same underlying RDF model, so all exports will be semantically equivalent.",
+          "is_first_message": false,
+          "reply_to": "msg_005_1",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_005"
+        },
+        {
+          "message_id": "msg_005_3",
+          "thread_id": "thread_005",
+          "author": "Grace Taylor",
+          "author_email": "grace.t@example.com",
+          "date": "2024-01-18T10:15:00Z",
+          "subject": "Re: Exporting to different RDF formats",
+          "body": "Perfect, thanks Henry! I found it. One more question - is there a way to automate this via API? We might want to set up automated exports on a schedule.",
+          "is_first_message": false,
+          "reply_to": "msg_005_2",
+          "url": "https://groups.google.com/g/vocbench-user/c/thread_005"
+        }
+      ]
+    }
+  ]
+}
