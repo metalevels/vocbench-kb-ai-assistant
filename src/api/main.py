@@ -7,13 +7,16 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 from src.api.models import (
     ChatRequest, ChatResponse, SearchRequest, SearchResponse,
     IndexRequest, IndexResponse, HealthResponse, StatsResponse,
     Source, SearchResult, ErrorResponse
 )
+from src.api import scraper_routes
 from src.retrieval.vector_store import VectorStore, VectorStoreManager
 from src.retrieval.retriever import SemanticRetriever
 from src.processor.embeddings import EmbeddingGenerator
@@ -106,6 +109,29 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include scraper routes
+app.include_router(scraper_routes.router)
+
+# Mount static files
+static_dir = Path(__file__).parent / "static"
+if static_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+
+
+@app.get("/console", response_class=HTMLResponse, tags=["Console"])
+async def scraper_console():
+    """
+    Scraper web console
+
+    Access the interactive scraper management console.
+    """
+    console_file = static_dir / "scraper_console.html"
+    if console_file.exists():
+        with open(console_file, 'r', encoding='utf-8') as f:
+            return HTMLResponse(content=f.read())
+    else:
+        raise HTTPException(status_code=404, detail="Console not found")
 
 
 @app.get("/", tags=["Root"])
