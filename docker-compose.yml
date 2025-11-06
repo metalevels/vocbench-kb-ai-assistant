@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/chromadb:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=False
+    networks:
+      - vocbench-network
+
+  vocbench-api:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./config:/app/config
+    env_file:
+      - .env
+    depends_on:
+      - chromadb
+    networks:
+      - vocbench-network
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8080 --reload
+
+  scraper:
+    build: .
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./config:/app/config
+    env_file:
+      - .env
+    networks:
+      - vocbench-network
+    command: python -m src.scraper.main
+    profiles:
+      - scraper
+
+networks:
+  vocbench-network:
+    driver: bridge
